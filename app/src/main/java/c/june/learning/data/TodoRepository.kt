@@ -1,10 +1,10 @@
 package c.june.learning.data
 
+import kotlinx.coroutines.flow.Flow
+
 class TodoRepository(private val todoDao: TodoDao) {
 
-    suspend fun getTodoContent(): List<Todo> {
-        return todoDao.getTodoContents()
-    }
+    val allContents: Flow<List<Todo>> = todoDao.getTodoContents()
 
     suspend fun insertContent(todo: Todo) {
         todoDao.insertTodoContent(todo)

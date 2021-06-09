@@ -7,15 +7,11 @@ import kotlinx.coroutines.launch
 
 class TodoViewModel(private val repository: TodoRepository): ViewModel() {
 
-    val contents = liveData {
-        emit(repository.getTodoContent())
-    }
+    val contents: LiveData<List<Todo>> = repository.allContents.asLiveData()
 
-    fun setTestValue() {
-        viewModelScope.launch {
-            repository.insertContent(
-                Todo(content = "test")
-            )
-        }
+    fun setTestValue() = viewModelScope.launch {
+        repository.insertContent(
+            Todo(content = "test")
+        )
     }
 }

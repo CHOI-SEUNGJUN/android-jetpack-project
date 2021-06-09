@@ -30,5 +30,7 @@ class TodoFragment : Fragment() {
         model.contents.observe(viewLifecycleOwner) {
             Log.e("todoFragment", it.toString())
         }
+
+        model.setTestValue()
     }
 }
