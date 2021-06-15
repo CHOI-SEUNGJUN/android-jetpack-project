@@ -9,4 +9,8 @@ class TodoRepository(private val todoDao: TodoDao) {
     suspend fun insertContent(todo: Todo) {
         todoDao.insertTodoContent(todo)
     }
+
+    suspend fun updateContent(todo: Todo) {
+        todoDao.updateTodoCheckState(todo)
+    }
 }
