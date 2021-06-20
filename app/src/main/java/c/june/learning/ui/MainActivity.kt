@@ -36,8 +36,9 @@ class MainActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener false
                 }
             }
-
         }
+
+        binding.bottomView.selectedItemId = R.id.menu_github
     }
 
     private fun commitFragmentTransaction(fragment: Fragment) {
