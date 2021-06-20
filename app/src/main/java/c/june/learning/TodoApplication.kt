@@ -2,6 +2,7 @@ package c.june.learning
 
 import android.app.Application
 import c.june.learning.di.databaseModule
+import c.june.learning.di.netModule
 import c.june.learning.di.repositoryModule
 import c.june.learning.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -21,7 +22,8 @@ class TodoApplication: Application() {
         val modules = listOf(
             databaseModule,
             repositoryModule,
-            viewModelModule
+            viewModelModule,
+            netModule
         )
     }
 

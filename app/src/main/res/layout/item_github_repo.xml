@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="c.june.learning.data.Repo" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/txtRepoName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#943920"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{model.fullName}"
+            tools:text="android-architecture"/>
+
+        <TextView
+            android:id="@+id/txtRepoDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="10"
+            android:paddingVertical="12dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRepoName"
+            android:text="@{model.description}"
+            tools:text="A collection of samples to discuss and showcase different architectural tools and patterns for Android apps."/>
+
+        <TextView
+            android:id="@+id/txtRepoLanguage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:paddingVertical="12dp"
+            tools:text="Language: Kotlin"
+            app:setLanguageText="@{model.language}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRepoDescription" />
+
+        <ImageView
+            android:id="@+id/ivStar"
+            android:layout_width="0dp"
+            android:layout_marginVertical="12dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            app:layout_constraintEnd_toStartOf="@+id/txtRepoStars"
+            app:layout_constraintBottom_toBottomOf="@+id/txtRepoStars"
+            app:layout_constraintTop_toTopOf="@+id/txtRepoStars"
+        />
+
+        <TextView
+            android:id="@+id/txtRepoStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/ivForks"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtRepoForks"
+            android:text="@{String.valueOf(model.stars)}"
+            tools:text="30"/>
+
+        <ImageView
+            android:id="@+id/ivForks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:src="@drawable/ic_github"
+            app:layout_constraintEnd_toStartOf="@+id/txtRepoForks"
+            app:layout_constraintBottom_toBottomOf="@+id/txtRepoForks"
+            app:layout_constraintTop_toTopOf="@+id/txtRepoForks"
+        />
+
+        <TextView
+            android:id="@+id/txtRepoForks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRepoDescription"
+            tools:text="30"
+            android:text="@{String.valueOf(model.forks)}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
