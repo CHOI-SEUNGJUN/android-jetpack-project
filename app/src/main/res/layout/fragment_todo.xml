@@ -13,13 +13,35 @@
         android:layout_height="match_parent"
         tools:context=".ui.TodoFragment">
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <EditText
+                android:id="@+id/edtMemo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter memo"
+                android:imeOptions="actionSearch"
+                android:selectAllOnFocus="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTodoList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:todoItems="@{model.contents}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/item_todo"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
             >
 
         </androidx.recyclerview.widget.RecyclerView>
