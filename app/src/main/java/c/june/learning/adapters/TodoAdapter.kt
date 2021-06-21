@@ -3,15 +3,15 @@ package c.june.learning.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import c.june.learning.R
 import c.june.learning.data.Todo
 import c.june.learning.databinding.ItemTodoBinding
 
 class TodoAdapter(private val onUpdate: (Todo) -> (Unit)):
-    ListAdapter<Todo, TodoAdapter.TodoViewHolder>(TodoDiffCallBack()) {
+    PagingDataAdapter<Todo, TodoAdapter.TodoViewHolder>(TODO_DIFF) {
 
     inner class TodoViewHolder(
         private val binding: ItemTodoBinding
@@ -23,8 +23,8 @@ class TodoAdapter(private val onUpdate: (Todo) -> (Unit)):
                 executePendingBindings()
             }
 
-            binding.checkbox.setOnCheckedChangeListener { _, b ->
-                onUpdate(item.copy(isChecked = b))
+            binding.checkbox.setOnClickListener {
+                onUpdate(item.copy(isChecked = binding.checkbox.isChecked))
             }
         }
     }
@@ -41,17 +41,18 @@ class TodoAdapter(private val onUpdate: (Todo) -> (Unit)):
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-        holder.bind(getItem(position))
-    }
-}
-
-private class TodoDiffCallBack: DiffUtil.ItemCallback<Todo>() {
-
-    override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean {
-        return oldItem.tId == newItem.tId
+        getItem(position)?.let { holder.bind(it) }
     }
 
-    override fun areContentsTheSame(oldItem: Todo, newItem: Todo): Boolean {
-        return oldItem == newItem
+    companion object {
+        private val TODO_DIFF = object: DiffUtil.ItemCallback<Todo>() {
+            override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean {
+                return oldItem.tId == newItem.tId
+            }
+
+            override fun areContentsTheSame(oldItem: Todo, newItem: Todo): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 }
