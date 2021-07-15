@@ -30,6 +30,8 @@ object AppDependencies {
     private val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
     private val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
+    private val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
+
     val appLibraries = arrayListOf<String>().apply {
         add(kotlinStdLib)
         add(coreKtx)
@@ -47,6 +49,7 @@ object AppDependencies {
         add(retrofitGsonConverter)
         add(retrofitMock)
         add(okHttpLoggingInterceptor)
+        add(dataStore)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {

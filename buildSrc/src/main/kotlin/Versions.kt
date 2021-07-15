@@ -1,5 +1,5 @@
 object Versions {
-    const val gradle = "4.0.1"
+    const val gradle = "4.2.2"
     const val kotlin = "1.5.10"
 
     val coreKtx = "1.6.0"
@@ -20,4 +20,6 @@ object Versions {
     val paging = "3.0.0"
     val retrofit = "2.9.0"
     val okhttpLoggingInterceptor = "4.9.1"
+
+    val dataStore = "1.0.0-rc01"
 }
