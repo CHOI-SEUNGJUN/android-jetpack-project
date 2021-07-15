@@ -2,6 +2,8 @@ package c.june.learning.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import c.june.learning.R
@@ -19,6 +21,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setBottomViewSelectedListener()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_action_bar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_notification -> {
+
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun setBottomViewSelectedListener() {
