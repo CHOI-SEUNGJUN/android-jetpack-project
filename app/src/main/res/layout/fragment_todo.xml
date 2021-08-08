@@ -38,6 +38,8 @@
             app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/item_todo"
             android:scrollbars="vertical"
+            app:dividerHeight="@{Float.valueOf(1)}"
+            app:dividerColor="@{@color/purple_700}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/inputLayout"

@@ -39,6 +39,8 @@
             android:paddingVertical="12dp"
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager"
+            app:dividerHeight="@{Float.valueOf(1)}"
+            app:dividerColor="@{@color/purple_700}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
