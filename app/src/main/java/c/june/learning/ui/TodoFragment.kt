@@ -1,18 +1,17 @@
 package c.june.learning.ui
 
 import android.os.Bundle
-import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import c.june.learning.R
 import c.june.learning.adapters.TodoAdapter
 import c.june.learning.databinding.FragmentTodoBinding
+import c.june.learning.util.setOnEditCompleteListener
 import c.june.learning.viewmodels.TodoViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
@@ -53,23 +52,7 @@ class TodoFragment : Fragment() {
     }
 
     private fun initTodo() {
-        binding.edtMemo.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_GO) {
-                updateTodoListFromInput()
-                true
-            } else {
-                false
-            }
-        }
-
-        binding.edtMemo.setOnKeyListener { _, keyCode, event ->
-            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                updateTodoListFromInput()
-                true
-            } else {
-                false
-            }
-        }
+        binding.edtMemo.setOnEditCompleteListener { updateTodoListFromInput() }
 
         lifecycleScope.launch {
             adapter.loadStateFlow
@@ -100,9 +83,7 @@ class TodoFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        adapter = TodoAdapter(
-            onUpdate = { viewModel.updateValue(it) }
-        )
+        adapter = TodoAdapter { viewModel.updateValue(it) }
         binding.rvTodoList.adapter = adapter
         initTodoJob()
     }
