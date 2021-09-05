@@ -53,18 +53,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBottomViewSelectedListener() {
-        binding.bottomView.setOnNavigationItemSelectedListener {
+        binding.bottomView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_github -> {
                     commitFragmentTransaction(githubFragment)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
                 R.id.menu_todo -> {
                     commitFragmentTransaction(todoFragment)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
                 else -> {
-                    return@setOnNavigationItemSelectedListener false
+                    false
                 }
             }
         }
