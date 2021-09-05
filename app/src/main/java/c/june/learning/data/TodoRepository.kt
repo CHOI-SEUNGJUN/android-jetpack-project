@@ -3,16 +3,18 @@ package c.june.learning.data
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
 
 class TodoRepository(private val todoDao: TodoDao) {
 
-    suspend fun insertContent(todo: Todo) {
+    suspend fun insertContent(todo: Todo) = withContext(Dispatchers.IO) {
         todoDao.insertTodoContent(todo)
     }
 
-    suspend fun updateContent(todo: Todo) {
-        todoDao.updateTodoCheckState(todo)
+    suspend fun updateContent(todo: Todo) = withContext(Dispatchers.IO) {
+            todoDao.updateTodoCheckState(todo)
     }
 
     fun getTodoContentItemsByPaging(): Flow<PagingData<Todo>> {
