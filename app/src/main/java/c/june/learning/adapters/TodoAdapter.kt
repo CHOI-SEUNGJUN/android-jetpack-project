@@ -24,7 +24,8 @@ class TodoAdapter(private val onUpdate: (Todo) -> (Unit)):
             }
 
             binding.checkbox.setOnClickListener {
-                onUpdate(item.copy(isChecked = binding.checkbox.isChecked))
+                item.isChecked = binding.checkbox.isChecked
+                onUpdate(item)
             }
         }
     }
