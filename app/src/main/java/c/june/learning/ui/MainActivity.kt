@@ -9,19 +9,21 @@ import c.june.learning.R
 import c.june.learning.data.MainRepository
 import c.june.learning.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.koin.android.ext.android.inject
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val todoFragment by lazy { TodoFragment() }
     private val githubFragment by lazy { GithubFragment() }
 
-    private val mainRepository: MainRepository by inject()
+    @Inject lateinit var mainRepository: MainRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

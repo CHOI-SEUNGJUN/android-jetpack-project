@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import c.june.learning.R
@@ -13,18 +14,19 @@ import c.june.learning.adapters.TodoAdapter
 import c.june.learning.databinding.FragmentTodoBinding
 import c.june.learning.util.setOnEditCompleteListener
 import c.june.learning.viewmodels.TodoViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class TodoFragment : Fragment() {
 
     private lateinit var binding: FragmentTodoBinding
-    private val viewModel: TodoViewModel by viewModel()
+    private val viewModel: TodoViewModel by viewModels()
     private lateinit var adapter: TodoAdapter
 
     private var todoJob: Job? = null

@@ -6,8 +6,9 @@ import androidx.paging.PagingData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class TodoRepository(private val todoDao: TodoDao) {
+class TodoRepository @Inject constructor(private val todoDao: TodoDao) {
 
     suspend fun insertContent(todo: Todo) = withContext(Dispatchers.IO) {
         todoDao.insertTodoContent(todo)

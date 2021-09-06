@@ -5,8 +5,9 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import c.june.learning.api.GithubService
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class GithubRepository(private val service: GithubService) {
+class GithubRepository @Inject constructor(private val service: GithubService) {
     fun getRepositorySearchItems(query: String): Flow<PagingData<Repo>> {
         return Pager(
             config = PagingConfig(

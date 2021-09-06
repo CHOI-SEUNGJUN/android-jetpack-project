@@ -5,10 +5,15 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import c.june.learning.data.Todo
 import c.june.learning.data.TodoRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class TodoViewModel(private val repository: TodoRepository): ViewModel() {
+@HiltViewModel
+class TodoViewModel @Inject constructor(
+    private val repository: TodoRepository
+    ): ViewModel() {
 
     fun insertValue(memo: String) = viewModelScope.launch {
         repository.insertContent(
