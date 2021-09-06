@@ -7,7 +7,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import c.june.learning.R
-import c.june.learning.data.Todo
+import c.june.learning.data.model.Todo
 import c.june.learning.databinding.ItemTodoBinding
 
 class TodoAdapter(private val onUpdate: (Todo) -> (Unit)):

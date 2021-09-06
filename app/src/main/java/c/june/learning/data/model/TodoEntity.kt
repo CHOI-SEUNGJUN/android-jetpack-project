@@ -1,4 +1,4 @@
-package c.june.learning.data
+package c.june.learning.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

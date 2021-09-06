@@ -15,11 +15,11 @@ object Versions {
     val fragmentKtx = "1.3.5"
     val liveDataKtx = "2.3.1"
 
-    val koin = "3.0.2"
-
     val paging = "3.0.0"
     val retrofit = "2.9.0"
     val okhttpLoggingInterceptor = "4.9.1"
 
     val dataStore = "1.0.0-rc01"
+
+    val hilt = "2.38.1"
 }

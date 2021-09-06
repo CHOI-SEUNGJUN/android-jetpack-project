@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import c.june.learning.R
@@ -13,18 +14,19 @@ import c.june.learning.adapters.GithubAdapter
 import c.june.learning.databinding.FragmentGithubBinding
 import c.june.learning.util.setOnEditCompleteListener
 import c.june.learning.viewmodels.GithubViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class GithubFragment : Fragment() {
 
     private lateinit var binding: FragmentGithubBinding
-    private val viewModel: GithubViewModel by viewModel()
+    private val viewModel: GithubViewModel by viewModels()
     private val adapter = GithubAdapter()
 
     private var searchJob: Job? = null

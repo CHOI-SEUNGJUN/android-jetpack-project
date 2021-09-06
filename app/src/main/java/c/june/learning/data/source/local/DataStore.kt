@@ -1,4 +1,4 @@
-package c.june.learning.data
+package c.june.learning.data.source.local
 
 import android.content.Context
 import androidx.datastore.core.DataStore

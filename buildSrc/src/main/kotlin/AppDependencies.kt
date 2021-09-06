@@ -15,9 +15,6 @@ object AppDependencies {
     private val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
     private val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveDataKtx}"
 
-    private val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
-    private val koinAndroidExt = "io.insert-koin:koin-android-ext:${Versions.koin}"
-
     private val paging = "androidx.paging:paging-runtime-ktx:${Versions.paging}"
 
     private val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
@@ -32,6 +29,9 @@ object AppDependencies {
 
     private val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
 
+    private val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    private val hiltKapt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+
     val appLibraries = arrayListOf<String>().apply {
         add(kotlinStdLib)
         add(coreKtx)
@@ -42,14 +42,13 @@ object AppDependencies {
         add(roomKtx)
         add(fragmentKtx)
         add(liveDataKtx)
-        add(koinAndroid)
-        add(koinAndroidExt)
         add(paging)
         add(retrofit)
         add(retrofitGsonConverter)
         add(retrofitMock)
         add(okHttpLoggingInterceptor)
         add(dataStore)
+        add(hilt)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {
@@ -63,6 +62,7 @@ object AppDependencies {
 
     val kaptLibraries = arrayListOf<String>().apply {
         add(roomKapt)
+        add(hiltKapt)
     }
 }
 
