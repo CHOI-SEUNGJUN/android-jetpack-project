@@ -22,4 +22,6 @@ object Versions {
     val okhttpLoggingInterceptor = "4.9.1"
 
     val dataStore = "1.0.0-rc01"
+
+    val hilt = "2.38.1"
 }

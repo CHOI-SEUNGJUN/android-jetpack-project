@@ -32,6 +32,10 @@ object AppDependencies {
 
     private val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
 
+
+    private val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    private val hiltKapt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+
     val appLibraries = arrayListOf<String>().apply {
         add(kotlinStdLib)
         add(coreKtx)
@@ -50,6 +54,7 @@ object AppDependencies {
         add(retrofitMock)
         add(okHttpLoggingInterceptor)
         add(dataStore)
+        add(hilt)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {
@@ -63,6 +68,7 @@ object AppDependencies {
 
     val kaptLibraries = arrayListOf<String>().apply {
         add(roomKapt)
+        add(hiltKapt)
     }
 }
 
