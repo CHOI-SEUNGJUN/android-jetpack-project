@@ -1,5 +1,6 @@
-package c.june.learning.api
+package c.june.learning.data.source.remote
 
+import c.june.learning.data.model.RepoSearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -1,7 +1,9 @@
 package c.june.learning.di
 
-import c.june.learning.api.GithubService
-import c.june.learning.data.*
+import c.june.learning.data.source.remote.GithubService
+import c.june.learning.data.repository.GithubRepository
+import c.june.learning.data.repository.TodoRepository
+import c.june.learning.data.source.local.TodoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -7,7 +7,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import c.june.learning.R
-import c.june.learning.data.Repo
+import c.june.learning.data.model.Repo
 import c.june.learning.databinding.ItemGithubRepoBinding
 
 class GithubAdapter: PagingDataAdapter<Repo, GithubAdapter.GithubViewHolder>(GITHUB_DIFF) {

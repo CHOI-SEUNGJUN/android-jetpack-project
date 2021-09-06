@@ -1,6 +1,5 @@
-package c.june.learning.api
+package c.june.learning.data.model
 
-import c.june.learning.data.Repo
 import com.google.gson.annotations.SerializedName
 
 data class RepoSearchResponse(

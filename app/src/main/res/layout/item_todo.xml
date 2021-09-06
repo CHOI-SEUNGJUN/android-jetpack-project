@@ -3,7 +3,7 @@
     <data>
         <variable
             name="entity"
-            type="c.june.learning.data.Todo" />
+            type="c.june.learning.data.model.Todo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

@@ -2,8 +2,8 @@ package c.june.learning.di
 
 import android.content.Context
 import androidx.room.Room
-import c.june.learning.data.AppDatabase
-import c.june.learning.data.TodoDao
+import c.june.learning.data.source.local.AppDatabase
+import c.june.learning.data.source.local.TodoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

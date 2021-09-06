@@ -1,6 +1,6 @@
 package c.june.learning.di
 
-import c.june.learning.api.GithubService
+import c.june.learning.data.source.remote.GithubService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

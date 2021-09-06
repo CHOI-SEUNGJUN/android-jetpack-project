@@ -3,8 +3,8 @@ package c.june.learning.viewmodels
 import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import c.june.learning.data.Todo
-import c.june.learning.data.TodoRepository
+import c.june.learning.data.model.Todo
+import c.june.learning.data.repository.TodoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

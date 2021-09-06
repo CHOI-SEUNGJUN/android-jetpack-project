@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import c.june.learning.data.GithubRepository
-import c.june.learning.data.Repo
+import c.june.learning.data.repository.GithubRepository
+import c.june.learning.data.model.Repo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

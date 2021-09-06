@@ -1,7 +1,9 @@
-package c.june.learning.data
+package c.june.learning.data.source
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import c.june.learning.data.model.Todo
+import c.june.learning.data.source.local.TodoDao
 
 class TodoPagingSource(
     private val dao: TodoDao

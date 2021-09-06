@@ -1,9 +1,11 @@
-package c.june.learning.data
+package c.june.learning.data.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import c.june.learning.api.GithubService
+import c.june.learning.data.source.remote.GithubService
+import c.june.learning.data.model.Repo
+import c.june.learning.data.source.GithubPagingSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

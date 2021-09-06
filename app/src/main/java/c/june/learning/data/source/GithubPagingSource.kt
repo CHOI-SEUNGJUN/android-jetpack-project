@@ -1,8 +1,9 @@
-package c.june.learning.data
+package c.june.learning.data.source
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import c.june.learning.api.GithubService
+import c.june.learning.data.source.remote.GithubService
+import c.june.learning.data.model.Repo
 import java.lang.Exception
 
 class GithubPagingSource(

@@ -1,4 +1,4 @@
-package c.june.learning.data
+package c.june.learning.data.model
 
 import com.google.gson.annotations.SerializedName
 

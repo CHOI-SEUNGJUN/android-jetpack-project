@@ -1,6 +1,7 @@
-package c.june.learning.data
+package c.june.learning.data.source.local
 
 import androidx.room.*
+import c.june.learning.data.model.Todo
 
 @Dao
 interface TodoDao {
